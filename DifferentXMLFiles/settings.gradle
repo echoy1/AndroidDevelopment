@@ -1,0 +1,2 @@
+rootProject.name = "DifferentXMLFiles"
+include ':app'

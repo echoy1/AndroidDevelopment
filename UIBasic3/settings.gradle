@@ -1,0 +1,2 @@
+rootProject.name = "UIBasic3"
+include ':app'

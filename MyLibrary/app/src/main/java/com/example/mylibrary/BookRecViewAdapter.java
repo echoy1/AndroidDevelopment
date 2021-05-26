@@ -1,6 +1,7 @@
 package com.example.mylibrary;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,7 +49,8 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, books.get(position).getName() + " Selected", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(mContext, BookActivity.class);
+                mContext.startActivity(intent);
             }
         });
 
@@ -58,11 +60,11 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
 
         if (books.get(position).isExpanded()) {
             TransitionManager.beginDelayedTransition(holder.parent);
-            holder.expandedRelLayout.setVerticalGravity(View.VISIBLE);
+            holder.expandedRelLayout.setVisibility(View.VISIBLE);
             holder.downArrow.setVisibility(View.GONE);
         } else {
             TransitionManager.beginDelayedTransition(holder.parent);
-            holder.expandedRelLayout.setVerticalGravity(View.GONE);
+            holder.expandedRelLayout.setVisibility(View.GONE);
             holder.downArrow.setVisibility(View.VISIBLE);
         }
     }

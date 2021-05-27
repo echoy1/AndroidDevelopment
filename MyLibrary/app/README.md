@@ -1,3 +1,3 @@
 This is my README
 
-![Homescreen](MyLibrary/app/images/homescreen.png)
+![Homescreen](/images/homescreen.PNG)

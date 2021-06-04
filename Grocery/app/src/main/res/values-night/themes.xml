@@ -14,8 +14,12 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="AppTheme.NoActionBar">
+    <style name="AppTheme.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.Button" parent="ThemeOverlay.AppCompat.DayNight">
+        <item name="colorButtonNormal">@color/colorPrimary</item>
     </style>
 </resources>

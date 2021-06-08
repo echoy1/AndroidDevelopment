@@ -27,7 +27,7 @@ import java.util.HashMap;
 public class MainSellerActivity extends AppCompatActivity {
 
     private TextView nameTv;
-    private ImageButton logoutBtn;
+    private ImageButton logoutBtn, editProfileBtn;
 
 
     private FirebaseAuth firebaseAuth;
@@ -40,6 +40,7 @@ public class MainSellerActivity extends AppCompatActivity {
 
         nameTv = findViewById(R.id.nameTv);
         logoutBtn = findViewById(R.id.logoutBtn);
+        editProfileBtn = findViewById(R.id.editProfileBtn);
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Please wait");
@@ -63,6 +64,14 @@ public class MainSellerActivity extends AppCompatActivity {
 //                firebaseAuth.signOut();
 //                checkUser();
 
+            }
+        });
+
+        editProfileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // open edit profile activity
+                startActivity(new Intent(MainSellerActivity.this, ProfileEditSellerActivity.class));
             }
         });
 
@@ -117,7 +126,7 @@ public class MainSellerActivity extends AppCompatActivity {
                             String name = "" + ds.child("name").getValue();
                             String accountType = "" + ds.child("accountType").getValue();
 
-                            nameTv.setText(name + " (" + accountType + ")");
+                            nameTv.setText(name);
                         }
                     }
 

@@ -64,6 +64,8 @@ public class Utils {
         books.add(new Book(2, "The Myth of Sisyphus", "Albert Camus", 250, "https://miro.medium.com/max/500/1*DDsOx6D3oe8ZxcA-OTfIDA.jpeg",
                 "One of the most influential works of this century, this is a crucial exposition of existentialist thought",
                 "Long Description"));
+        books.add(new Book(3, "War and Peace", "Leo Tolstoy", 1225, "https://images-na.ssl-images-amazon.com/images/I/71lPZpwz0HL.jpg",
+                "Not a novel, even less is it a poem, and still less a historical chronicle", "Long Description"));
 
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Gson gson = new Gson();

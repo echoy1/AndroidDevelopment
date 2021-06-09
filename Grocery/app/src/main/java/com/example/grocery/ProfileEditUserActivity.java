@@ -180,7 +180,7 @@ public class ProfileEditUserActivity extends AppCompatActivity implements Locati
             hashMap.put("longitude", "" + longitude);
 
             DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
-            ref.child(firebaseAuth.getUid()).setValue(hashMap)
+            ref.child(firebaseAuth.getUid()).updateChildren(hashMap)
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {

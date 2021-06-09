@@ -62,7 +62,7 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
     private static final int CAMERA_REQUEST_CODE = 200;
     private static final int STORAGE_REQUEST_CODE = 300;
 
-    // image, location pick constants
+    // image pick constants
     private static final int IMAGE_PICK_GALLERY_CODE = 400;
     private static final int IMAGE_PICK_CAMERA_CODE = 500;
 
@@ -193,7 +193,7 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
             hashMap.put("shopOpen", "" + shopOpen);
 
             DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
-            ref.child(firebaseAuth.getUid()).setValue(hashMap)
+            ref.child(firebaseAuth.getUid()).updateChildren(hashMap)
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
@@ -320,6 +320,7 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
                             addressEt.setText(address);
                             shopNameEt.setText(shopName);
                             deliveryFeeEt.setText(deliveryFee);
+
 
                             if (shopOpen.equals("true")) {
                                 shopOpenSwitch.setChecked(true);
